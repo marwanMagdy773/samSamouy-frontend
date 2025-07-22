@@ -1,0 +1,50 @@
+.transformation-section {
+  width: 100vw;
+  overflow: hidden;
+  padding: 60px 0;
+  text-align: center;
+ /* height: 180vh; */
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #222;
+  font-weight: 900;
+}
+
+.video-container {
+  position: relative;
+  width: 50vw;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+height: 120vh;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* للموبايل */
+@media screen and (max-width: 768px) {
+ .video-container {
+        width: 98vw;
+        max-width: 95vw;
+        aspect-ratio: 9 / 16;
+        border-radius: 5px;
+        margin-top: -25px;
+    }
+
+  .video-player {
+    border-radius: 0;
+
+  }
+}
