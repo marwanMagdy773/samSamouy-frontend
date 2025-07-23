@@ -1,6 +1,11 @@
 import React from 'react';
+import { trackEvent } from '../analytics'; // تأكد إن المسار صح حسب مشروعك
 
 const SolutionSection = () => {
+  const handleCTAClick = () => {
+    trackEvent('Solution Section', 'ابدأ تغييرك الآن', 'CTA - Solution Section');
+  };
+
   return (
     <section id="solution">
       <div className="container">
@@ -24,7 +29,9 @@ const SolutionSection = () => {
           </div>
         </div>
         <div className="text-center">
-          <a href="#packages-section" className="section-cta-button">ابدأ تغييرك الآن</a>
+          <a href="#packages-section" className="section-cta-button" onClick={handleCTAClick}>
+            ابدأ تغييرك الآن
+          </a>
         </div>
       </div>
     </section>
