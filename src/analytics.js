@@ -2,7 +2,7 @@
 import ReactGA from 'react-ga4';
 
 export const initGA = () => {
-  ReactGA.initialize("G-XXXXXXXXXX"); // استبدل بـ Measurement ID بتاعك
+  ReactGA.initialize("G-YDZRCPZWT8"); // استبدل بـ Measurement ID بتاعك
   ReactGA.send({ hitType: 'pageview', page: window.location.pathname });
 };
 
