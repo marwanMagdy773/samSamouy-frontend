@@ -249,6 +249,12 @@ a:hover {
             background-color: #12014c;
             transform: scale(1.05);
         }
+        @media screen and (max-width: 768px) {
+            .text-center .section-cta-button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
 /* جدول الباقات */
     .pricing-table {
             display: grid;
@@ -428,6 +434,31 @@ a:hover {
             color:var(--white-color);
             margin: 0 auto 30px auto;
         }
+        #company-info .company-btn{
+             background-color: var(--accent-color);
+            color: var(--white-color);
+            padding: 13px 90px;
+            font-size: 1em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            animation: zoomIn 1s ease-out 1s;
+            animation-fill-mode: both;
+        }
+      
+        
+          .text-center .company-btn:hover {
+            background-color: #612301;
+            transform: scale(1.05);
+        }
+@media screen and(max-width: 768px) {
+            #company-info .company-btn {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+          }
 /* أزرار الحجز */
 .payment-button {
   width: 100%;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackEvent } from '../analytics'; // تأكد من المسار حسب المشروع عندك
 
 const PackagesSection = ({ onOpenModal }) => {
   const packagesData = [
@@ -83,9 +84,18 @@ const PackagesSection = ({ onOpenModal }) => {
       title: pkg.title,
       duration: selectedDurations[pkg.id],
       currency: selectedCurrencies[pkg.id],
-price: Number(calculatePrice(pkg)),
+      price: Number(calculatePrice(pkg)),
       currencySymbol: currencies[selectedCurrencies[pkg.id]].symbol,
     };
+
+    // Send tracking event
+    trackEvent(
+      'Package CTA',
+      `Clicked ${pkg.title} - ${selectedInfo.duration} month(s)`,
+      `Currency: ${selectedInfo.currency} | Price: ${selectedInfo.price} | Popular: ${!!pkg.popular}`
+    );
+
+    // Trigger modal
     onOpenModal(selectedInfo);
   };
 

@@ -1,5 +1,7 @@
+// VIPPackages.jsx
 import React, { useState } from 'react';
 import SubscriptionModal from './SubscriptionModal';
+import { trackEvent } from '../analytics'; // تأكد من المسار حسب مكان ملف analytics.js
 
 const VIPPackages = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -8,6 +10,9 @@ const VIPPackages = () => {
   const handleOpenModal = (pkg) => {
     setSelectedPackage(pkg);
     setIsModalOpen(true);
+
+    // GA4 tracking event
+    trackEvent('VIP Packages', 'احجز الان', pkg.title);
   };
 
   const handleCloseModal = () => {

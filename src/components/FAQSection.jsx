@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { trackEvent } from '../analytics'; // تأكد من المسار الصحيح
 
 const FAQSection = () => {
-  // حالة لتتبع الأسئلة المفتوحة (index)
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
@@ -33,9 +33,12 @@ const FAQSection = () => {
     }
   ];
 
-  // تغيير حالة الفتح عند الضغط على سؤال
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleChoosePackageClick = () => {
+    trackEvent('FAQ Section', 'اختر باقتك الآن', 'CTA - FAQ Choose Package Button');
   };
 
   return (
@@ -62,7 +65,13 @@ const FAQSection = () => {
         ))}
 
         <div className="text-center" style={{ marginTop: '30px' }}>
-          <a href="#packages-section" className="section-cta-button">اختر باقتك الآن</a>
+          <a
+            href="#packages-section"
+            className="section-cta-button"
+            onClick={handleChoosePackageClick}
+          >
+            اختر باقتك الآن
+          </a>
         </div>
       </div>
     </section>
