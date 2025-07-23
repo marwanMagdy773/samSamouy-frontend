@@ -41,6 +41,7 @@ height: 120vh;
         aspect-ratio: 9 / 16;
         border-radius: 5px;
         margin-top: -25px;
+        height: 85vh;
     }
 
   .video-player {
