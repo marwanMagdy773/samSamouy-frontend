@@ -3,7 +3,7 @@ import { trackEvent } from '../analytics'; // عدل المسار حسب مكا�
 
 const HeroSection = () => {
   const handleCTAClick = () => {
-    trackEvent('Hero Section', 'Click CTA Button', 'ابدأ تغييرك دلوقتي');
+    trackEvent('Hero Section', 'ابدأ تغييرك دلوقتي', 'ابدأ تغييرك دلوقتي');
   };
 
   return (
