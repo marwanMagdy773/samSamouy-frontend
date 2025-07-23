@@ -16,12 +16,12 @@ const Transformation = () => {
   const touchEndX = useRef(0);
 
   // Auto slide every 5 seconds
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentIndex((prev) => (prev + 1) % images.length);
-//     }, 5000);
-//     return () => clearInterval(interval);
-//   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Adjust width on resize
   useEffect(() => {
@@ -29,7 +29,7 @@ const Transformation = () => {
       if (window.innerWidth <= 768) {
         setSlideWidth(100);
       } else {
-        setSlideWidth(90);
+        setSlideWidth(70);
       }
     }
 
