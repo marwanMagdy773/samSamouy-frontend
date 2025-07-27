@@ -3,49 +3,130 @@
   overflow: hidden;
   padding: 60px 0;
   text-align: center;
- /* height: 180vh; */
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-weight: 900;
+  font-size: 2.2em;
   margin-bottom: 40px;
   color: #222;
-  font-weight: 900;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.video-container {
+.slider-container {
   position: relative;
-  width: 50vw;
+  width: 90vw;
   max-width: 900px;
   aspect-ratio: 16 / 9;
-height: 120vh;
   overflow: hidden;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.video-player {
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: calc(90vw * 4);
+  max-width: calc(900px * 4);
+}
+
+.slide {
+  width: 90vw;
+  max-width: 900px;
+  height: 100%;
+  flex-shrink: 0;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
-/* للموبايل */
+.nav-button {
+  position: absolute;
+  width: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background-color: #f8f9fa;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.nav-button:hover {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+/* 🎯 MEDIA QUERY للموبايل */
 @media screen and (max-width: 768px) {
- .video-container {
-        width: 98vw;
-        max-width: 95vw;
-        aspect-ratio: 9 / 16;
-        border-radius: 5px;
-        margin-top: -25px;
-        height: 85vh;
-    }
-
-  .video-player {
+  .slider-container {
+    width: 100vw;
+    max-width: 100vw;
+    aspect-ratio: 1 / 1.2;
     border-radius: 0;
+  }
 
+  .slider {
+    width: calc(100vw * 4);
+    max-width: unset;
+  }
+
+  .slide {
+    width: 94vw;
+    max-width: 100vw;
+    margin-left: 15px;
+    margin-right: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .slide video {
+    object-fit: cover;
+  }
+
+  .nav-button {
+    display: none;
   }
 }

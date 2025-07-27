@@ -1,5 +1,5 @@
 import React from 'react';
-import { trackEvent } from '../analytics'; // تأكد من المسار الصحيح للملف
+import { trackEvent } from '../analytics'; 
 
 const CompanyInfoSection = () => {
   const handleJoinClick = () => {

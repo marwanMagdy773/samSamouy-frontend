@@ -37,10 +37,12 @@ const App = () => {
   return (
     <>
       <HeroSection />
-      <SolutionSection />
-      <HowItWorksSection />
       <TransformationSection/>
       <TransformationVideosSection />
+      <SolutionSection />
+  
+      <HowItWorksSection />
+    
 
       <CoachSection />
       <CompanyInfoSection />
