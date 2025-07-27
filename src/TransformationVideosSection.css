@@ -56,7 +56,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 3rem;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   border: none;
   padding: 10px 20px;
   border-radius: 50%;
@@ -126,7 +126,21 @@
     object-fit: cover;
   }
 
-  .nav-button {
-    display: none;
+    .nav-button {
+    display: block;
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+    padding: 0 0 ;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+
+
+  }
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 }
