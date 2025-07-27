@@ -96,10 +96,10 @@ const Transformation = () => {
 
         {/* أزرار تختفي تلقائيًا في الموبايل */}
         <button className="nav-button prev" onClick={prevSlide}>
-          ❮
+          ❯
         </button>
         <button className="nav-button next" onClick={nextSlide}>
-          ❯
+           ❮
         </button>
       </div>
 
